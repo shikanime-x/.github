@@ -46,13 +46,13 @@ jobs:
           permission-contents: write
           permission-workflows: write
           private-key: ${{ secrets.OPERATOR_PRIVATE_KEY }}
-      - uses: shikanime-x/actions/nix/setup@v9
+      - uses: shikanime-labs/actions/nix/setup@v9
         with:
           github-token: ${{ steps.createGithubAppToken.outputs.token }}
-      - uses: shikanime-x/actions/checkout@v9
+      - uses: shikanime-labs/actions/checkout@v9
         with:
           github-token: ${{ steps.createGithubAppToken.outputs.token }}
-      - uses: shikanime-x/actions/release@v9
+      - uses: shikanime-labs/actions/release@v9
         with:
           github-token: ${{ steps.createGithubAppToken.outputs.token }}
           ref: ${{ github.ref_name || github.event.inputs.ref_name }}
